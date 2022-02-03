@@ -11,3 +11,5 @@ Currently, the following dependencies are required:
 
 Thus, only support for Windows for now
 Should work on WINDOWS 10 21H1
+
+Added universal support, with some tweaking required for WIN-10 machines in Release v-1.1
