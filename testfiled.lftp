@@ -2,11 +2,20 @@ echo [93mSTART LFTP SCRIPT[0m
 set ftp:ssl-allow false
 set ssl:verify-certificate no
 set ftp:passive-mode off
-open ftp://android:12345@192.168.1.20:8081
-mirror -c "/Download/Classplus/" "/cygdrive/c/buffer"
+set xfer: log 1
+set xfer:log-file "log/ftp_transfer.log"
+HOST='192.168.1.20"
+PORT='8081'
+USER='admin'
+PASS='12345'
+TARGETFOLDER='%TEMP%/buffer-pdf'
+SOURCEFOLDER='/Download/Classplus'
+
+open ftp://$USER:$PASS@$HOST:$PORT
+mirror -c $SOURCEFOLDER $TARGETFOLDER
 echo [92mFiles downloaded[0m
 echo [91mNow starting deletion of mobile files.[0m
-rm -r /Download/Classplus/
+rm -r /Download/Classplus
 ECHO "Files deleted from mobile. Now EXITING."
 sleep 3
 exit
