@@ -1,0 +1,3 @@
+open sftp://admin:12345;fingerprint=ssh-rsa-71:90:e3:a7:c9:5d:83:66:34:88:3d:eb:b4:c7:88:fb@192.168.1.20:2222
+get *.pdf -resume -preservetime -transfer=binary -delete "/Classplus" "%TEMP%\buffer-pdf"
+exit
